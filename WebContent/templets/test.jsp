@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title></title>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/nihilo/nihilo.css">
     <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
     <style>
-      html, body, #map {
+      html, body, #mainWindow {
         height: 100%;
         width: 100%;
         margin: 0;
@@ -48,9 +49,11 @@
       
     </script>
   </head>
-  <body class="soria">
-   <div id="header" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
-      <span>Draw:<br /></span>
+ <body class="nihilo">
+
+  <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline'">
+    <div id="header" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+       <span>Draw:<br /></span>
       <button data-dojo-type="dijit/form/Button">Point</button>
       <button data-dojo-type="dijit/form/Button">Multi Point</button>
       <button data-dojo-type="dijit/form/Button">Line</button>
@@ -65,6 +68,8 @@
       <button data-dojo-type="dijit/form/Button">Ellipse</button>
     </div>
     <div id="search"></div>
-    <div id="map"></div>            
+      <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
+  </div>
+         
   </body> 
 </html>

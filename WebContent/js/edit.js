@@ -1,7 +1,8 @@
 var edit = {};
 edit.init = function(Map, Draw, Graphic,
         SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol,
-        parser, registry){
+        parser, registry
+        ){
 	map.on("load", createToolbar);
 	
 	// loop through all dijits, connect onClick event
