@@ -2,8 +2,8 @@
 var map, toolbar, symbol, geomTask;
 require([
     /*搜索部分*/
-	"esri/dijit/Geocoder",
 	"esri/map",
+	"esri/dijit/Geocoder",
 	"esri/graphic",
 	"esri/symbols/SimpleMarkerSymbol",
 	"esri/geometry/screenUtils",
@@ -11,6 +11,7 @@ require([
 	"dojo/dom-construct",
 	"dojo/query",
 	"dojo/_base/Color",
+	"dojo/domReady!",
 	/*编辑部分*/
     "esri/toolbars/draw",
     "esri/symbols/SimpleLineSymbol",
@@ -20,12 +21,12 @@ require([
     "dijit/layout/BorderContainer", 
     "dijit/layout/ContentPane", 
     "dijit/form/Button", 
-    "dijit/WidgetSet",
-    "dojo/domReady!"
+    "dijit/WidgetSet"
 	], function(
-	    Geocoder,Map, 
+	    Map, Geocoder,
 	    Graphic, SimpleMarkerSymbol, screenUtils,
-	    dom, domConstruct, query, Color, /*draw*/Draw, SimpleLineSymbol, SimpleFillSymbol,
+	    dom, domConstruct, query, Color, /*draw*/Draw, Graphic,
+        SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol,
         parser, registry
 	) { 
     // create a map and instance of the geocoder widget here
