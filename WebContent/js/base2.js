@@ -30,11 +30,18 @@ require([
 	) { 
     // create a map and instance of the geocoder widget here
 	parser.parse();
+	//map = new Map("map"); 
+	//var MyTiledMapServiceLayer = new esri.layers.ArcGISTiledMapServiceLayer ("http://www.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer"); 
+	//map.addLayer(MyTiledMapServiceLayer);
+	map = new esri.Map("map");
+    var layer = new esri.layers.ArcGISDynamicMapServiceLayer("http://localhost:6080/arcgis/rest/services/SampleWorldCities/MapServer");
+    map.addLayer(layer);
+    /*
 	map = new Map("map", {
     	basemap: "streets", 
     	center: [ -100, 40 ], 
     	zoom: 10
-    });
+    });*/
     search.init(Map, Geocoder,
 	    Graphic, SimpleMarkerSymbol, screenUtils,
 	    dom, domConstruct, query, Color

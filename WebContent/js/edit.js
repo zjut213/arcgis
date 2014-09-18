@@ -16,7 +16,8 @@ edit.init = function(Map, Draw, Graphic,
 	});
 	
 	function activateTool() {
-	  var tool = this.label.toUpperCase().replace(/ /g, "_");
+		alert("fsdf");
+	  var tool = this.get("id").toUpperCase().replace(/ /g, "_");
 	  toolbar.activate(Draw[tool]);
 	  map.hideZoomSlider();
 	}

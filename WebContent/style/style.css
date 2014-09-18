@@ -1,0 +1,33 @@
+html, body, #mainWindow {
+	  height: 100%;
+	  width: 100%;
+	  margin: 0;
+	  padding: 0;
+	  font-size:14px;font-family:'Microsoft YaHei', SimHei !important;
+}
+body{
+	 color:#444;
+}
+#mainWindow{ }
+
+#search {
+        display: block;
+       position:absolute;
+       right:10px;
+       top:6px;
+        z-index: 3;        
+}
+
+#header{
+	 padding:10px 10px;box-shadow:0px -2px 2px #f9f9f9 inset;  
+}
+
+#main{border-top: 0;}
+
+#header .logo{font-size:16px;font-weight:bold;padding:0 5px;}
+#header .logo span{font-size:11px;background: #6699CC;border-radius: 6px;padding: 0 4px;color:#fff;font-weight: normal}
+.dj_ie .infowindow .window .top .right .user .content { position: relative; }
+      .dj_ie .simpleInfoWindow .content {position: relative;}
+ 
+#left-bar{}
+#left-bar h2{font-size: 12px;font-weight: normal;}

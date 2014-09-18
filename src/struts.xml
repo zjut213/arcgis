@@ -7,7 +7,7 @@
     <constant name="struts.devMode" value="true" />
     <package name="default" namespace="/" extends="struts-default"> 
     	<action name="test" class="action.test">
-             <result name="success">/templets/test.jsp</result>
+             <result name="success">/templets/index.jsp</result>
         </action>
     </package>
 </struts>

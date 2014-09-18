@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title></title>
-    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/nihilo/nihilo.css">
+    <title></title>  
+    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
     <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
     <style>
       html, body, #mainWindow {
@@ -13,13 +15,15 @@
         width: 100%;
         margin: 0;
         padding: 0;
+        font-size:12px;font-family:'Microsoft YaHei', SimHei !important;
       }
       #search {
         display: block;
-        position: absolute;
+       position:absolute;
+       right:30px;
+       top:60px;
         z-index: 3;
-        top: 20px;
-        left: 75px;
+        
       }
       .spotlight {
         z-index:-1;
@@ -49,26 +53,34 @@
       
     </script>
   </head>
- <body class="nihilo">
-
+ <body class="claro">
+<div id="search"></div>
   <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline'">
-    <div id="header" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
-       <span>Draw:<br /></span>
-      <button data-dojo-type="dijit/form/Button">Point</button>
-      <button data-dojo-type="dijit/form/Button">Multi Point</button>
-      <button data-dojo-type="dijit/form/Button">Line</button>
-      <button data-dojo-type="dijit/form/Button">Polyline</button>
-      <button data-dojo-type="dijit/form/Button">Polygon</button>
-      <button data-dojo-type="dijit/form/Button">Freehand Polyline</button>
-      <button data-dojo-type="dijit/form/Button">Freehand Polygon</button>
-      <!--The Arrow,Triangle,Circle and Ellipse types all draw with the polygon symbol-->
-      <button data-dojo-type="dijit/form/Button">Arrow</button>
-      <button data-dojo-type="dijit/form/Button">Triangle</button>
-      <button data-dojo-type="dijit/form/Button">Circle</button>
-      <button data-dojo-type="dijit/form/Button">Ellipse</button>
+    <div id="header" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'" gutters="false">
+  交通GIS管理 
+ 
+ 
     </div>
-    <div id="search"></div>
-      <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
+    
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left'" style="width:200px;">
+    	<span>绘制:<br /></span>
+      <button data-dojo-type="dijit/form/Button" id="point">点</button>
+      <button data-dojo-type="dijit/form/Button" id="Multi Point">多点</button>
+      <button data-dojo-type="dijit/form/Button" id="Line">直线</button>
+      <button data-dojo-type="dijit/form/Button" id="Polyline">直线</button>
+      <button data-dojo-type="dijit/form/Button" id="Polygon">区域</button>
+      <button data-dojo-type="dijit/form/Button" id="Freehand Polyline">自由线</button>
+      <button data-dojo-type="dijit/form/Button" id="Freehand Polygon">自由区域</button>
+      <!--The Arrow,Triangle,Circle and Ellipse types all draw with the polygon symbol-->
+      <button data-dojo-type="dijit/form/Button" id="Arrow">箭头</button>
+      <button data-dojo-type="dijit/form/Button" id="Triangle">三角形</button>
+      <button data-dojo-type="dijit/form/Button" id="Circle">圆</button>
+      <button data-dojo-type="dijit/form/Button" id="Ellipse">椭圆</button>
+     
+    </div>
+    
+    
+      <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="padding:0 !important;"></div>
   </div>
          
   </body> 
