@@ -37,9 +37,9 @@ layout.init = function(){
 		  
 		 
 		global_map = new Map("map", {
-				basemap: "streets",
-				center: [-122.427, 37.769],
-				zoom: 17
+				basemap: "gray",
+            center: [-122.402, 47.642],
+				zoom: 11
 		});
 	 
 		
