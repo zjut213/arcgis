@@ -41,3 +41,25 @@ ul li{padding:0;margin:0;}
 .templatePicker{border:0 !important;padding: 0 !important;}
 
 .esriPopup .titlePane{background: #581D61 !important;}
+
+#titlePane{
+        width:240px;
+      }
+      .tundra .dijitTitlePaneTitle {
+        background: red;
+        font-weight:600;
+        border: none;
+        border-bottom:solid 1px #29201A;
+        border-top:solid 1px #29201A;
+      }
+      .tundra .dijitTitlePaneTitleHover {
+        background:#eee;
+      }
+      .tundra .dijitTitlePaneTitleActive {
+        background:#808775;
+      }
+      .tundra .dijitTitlePaneContentOuter {
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+      }

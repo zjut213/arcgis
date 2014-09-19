@@ -28,6 +28,7 @@
 	<script src="/arcgis/js/arcgis.attachment.js"></script>
 	<script src="/arcgis/js/arcgis.features.js"></script>
 	<script src="/arcgis/js/arcgis.track.js"></script>
+	<script src="/arcgis/js/arcgis.measure.js"></script>
 	<script>
 		map.init();
 	</script>
@@ -86,12 +87,20 @@
 		</div>
 		 <div id="main" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region: 'center', tabPosition: 'bottom'">
 				<div data-dojo-type="dojox/layout/ContentPane"  data-dojo-props="title: '查看地图'" style="padding:0;">
-					<div id="map" style="width:100%;height:100%;"></div>
+					<div id="map" style="width:100%;height:100%;">
+						 <div style="position:absolute; right:20px; top:70px; z-Index:999;">
+          					<div id="titlePane" data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Measurement', closable:'false', open:'false'">
+            					<div id="measurementDiv"></div>
+            					<span style="font-size:smaller;padding:5px 5px;">Press <b>CTRL</b> to enable snapping.</span>
+          					</div>
+        				</div>
+					</div>
 				</div>
 				<div data-dojo-type="dojox/layout/ContentPane"  data-dojo-props="title: '管理界面', href: 'grid.html'">
 				
 				</div>
 		 </div>
+		
 	</div>
 </body> 
 </html>

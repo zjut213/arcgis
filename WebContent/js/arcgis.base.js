@@ -51,6 +51,7 @@ map.init = function(){
  			search.init();
  			features.init();
  			track.init();
+ 			measure.init();
  		});	
  		
   	});
