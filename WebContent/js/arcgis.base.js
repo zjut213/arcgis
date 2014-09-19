@@ -47,10 +47,8 @@ map.init = function(){
  		parser.parse().then(function(){
  			layout.init();//初始化图层
  			edit.init();
- 			//attachment.init();
+ 			attachment.init();
  			search.init();
- 			features.init();
- 			track.init();
  		});	
  		
   	});
