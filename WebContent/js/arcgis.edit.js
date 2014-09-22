@@ -3,6 +3,7 @@
  * @nameSpace:edit
  */
 var edit = {};
+var toolbar, symbol, geomTask;
 //命名空间公共变量
 edit.params = {};
 edit.init = function(){

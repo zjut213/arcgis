@@ -85,7 +85,7 @@
         var map = evtObj.target;
         var facilityPointSymbol = new SimpleMarkerSymbol(
           SimpleMarkerSymbol.STYLE_SQUARE, 
-          20,
+          30,
           new SimpleLineSymbol(
             SimpleLineSymbol.STYLE_SOLID,
             new Color([89,95,35]), 2
@@ -177,11 +177,11 @@
           map.graphics.clear();
           dom.byId("directionsDiv").innerHTML= "Hover over the route to view directions";
           
-          //var highlightSymbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0,255,255],0.25), 4.5);
-          //var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
+          var highlightSymbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0,255,255],0.25), 4.5);
+          var highlightGraphic = new Graphic(evt.graphic.geometry,highlightSymbol);
           
-          //map.graphics.add(highlightGraphic);
-          //dom.byId("directionsDiv").innerHTML = esriLang.substitute(evt.graphic.attributes,"${*}");
+          map.graphics.add(highlightGraphic);
+          dom.byId("directionsDiv").innerHTML = esriLang.substitute(evt.graphic.attributes,"${*}");
         });
 
         //solve 

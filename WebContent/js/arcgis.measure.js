@@ -1,4 +1,4 @@
-/* @content:编辑脚本
+/* @content:测量脚本
  * @date:2014/9/19
  * @nameSpace:measure
  */
@@ -63,7 +63,8 @@ measure.init = function(){
           var layerInfos = [{
             layer: parcelsLayer
           }];
-          snapManager.setLayerInfos(layerInfos);
+          
+          //snapManager.setLayerInfos(layerInfos);
 
           var measurement = new Measurement({
             map: global_map

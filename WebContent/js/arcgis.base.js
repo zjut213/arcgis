@@ -49,9 +49,11 @@ map.init = function(){
  			edit.init();
  			//attachment.init();
  			search.init();
- 			features.init();
+ 			//features.init();
  			track.init();
- 			measure.init();
+ 			//measure.init();
+ 			service.init();
+ 			//facility.init();
  		});	
  		
   	});

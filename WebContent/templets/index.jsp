@@ -25,10 +25,12 @@
 	<script src="/arcgis/js/arcgis.layout.js"></script>
 	<script src="/arcgis/js/arcgis.edit.js"></script>
 	<script src="/arcgis/js/arcgis.search.js"></script>
-	<script src="/arcgis/js/arcgis.attachment.js"></script>
-	<script src="/arcgis/js/arcgis.features.js"></script>
+
+	
 	<script src="/arcgis/js/arcgis.track.js"></script>
-	<script src="/arcgis/js/arcgis.measure.js"></script>
+	
+	<script src="/arcgis/js/arcgis.service.js"></script>
+	<script src="/arcgis/js/arcgis.facility.js"></script>
 	<script>
 		map.init();
 	</script>
@@ -36,6 +38,7 @@
 <body class="nihilo">
 	<div id="search"></div>
 	<div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="liveSplitters:false,design:'headline'" gutters="false">
+
 		<div id="header" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'"  style="height:40px;">
 	  			<div class="logo">交通GIS管理系统 <span>BETA</span></div> 
 	  			<div class="top-menu">
@@ -45,6 +48,7 @@
 	  					<li id="">数据测量</li>
 	  				</ul>
 	  			</div>
+	  			
 		</div>
 		<div id="left" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left', splitter:true, minSize:20" style="padding:0;width:200px;"> 
 			
@@ -81,25 +85,79 @@
 					        </div>
 					      </button> 
 		 			</div>
+		 			<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title:"配送服务区"'>
+		 				<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'">
+					      <b>拖动选择配送服务到达时间</b>
+					      <div style="width: 400px; margin: 10px">
+					        <!-- create rules and labels above horizontal slider -->
+					        <ol data-dojo-type="dijit/form/HorizontalRuleLabels"
+					          data-dojo-props="
+					            container: 'topDecoration',
+					            style: 'height: 1.2em; font-weight: bold; margin: 0 12px;'">
+					          <li>0</li>
+					          <li>0:20</li>
+					          <li>0:40</li>
+					          <li>1:00</li>
+					          <li>1:20</li>
+					          <li>1:40</li>
+					          <li>2:00</li>
+					        </ol>
+					        <div data-dojo-type="dijit/form/HorizontalRule"
+					          data-dojo-props="
+					            container: 'topDecoration',
+					            count: 7,
+					            style: 'height: 5px; margin: 0 12px;'">
+					        </div>
+					        <input id="hslider" value="60" type="range"
+					          data-dojo-type="dijit/form/HorizontalSlider"
+					          data-dojo-props="
+					            minimum: 0,
+					            maximum: 120,
+					            showButtons: false,
+					            discreteValues: 25">
+					        <div style="padding-top: 10px; text-align: center;">配送时间: <strong id="decValue"></strong> 秒</div>
+					      </div>
+				   		 </div> 
+		 			</div>
+		 			<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title:"最近设施点查询"'>
+		 				<div id="directions"data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'" class="panel" style="height:250px;">
+					      <b>单机地图查找离输入坐标点最近的
+						      <select id="numLocations" name="numLocations" data-dojo-type="dijit/form/ComboBox" value="1" style="width:60px;">
+						          <option selected="selected">1</option>
+						          <option>2</option>
+						          <option>3</option>
+						          <option>4</option>
+						          <option>5</option>
+						      </select> 个设施点
+					      </b> 
+					      <div id="directionsDiv"></div>
+					    </div>	
+		 			</div>
 		 			
 		 			<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props='title:"测试"'>test</div>
+		 			
 			 </div>
+			 
 		</div>
+		
+	
 		 <div id="main" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region: 'center', tabPosition: 'bottom'">
 				<div data-dojo-type="dojox/layout/ContentPane"  data-dojo-props="title: '查看地图'" style="padding:0;">
 					<div id="map" style="width:100%;height:100%;">
-						 <div style="position:absolute; right:20px; top:70px; z-Index:999;">
+					<!-- 	 <div style="position:absolute; right:20px; top:70px; z-Index:999;">
           					<div id="titlePane" data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Measurement', closable:'false', open:'false'">
             					<div id="measurementDiv"></div>
             					<span style="font-size:smaller;padding:5px 5px;">Press <b>CTRL</b> to enable snapping.</span>
           					</div>
-        				</div>
+        				 </div>
+					-->
 					</div>
 				</div>
 				<div data-dojo-type="dojox/layout/ContentPane"  data-dojo-props="title: '管理界面', href: 'grid.html'">
 				
 				</div>
 		 </div>
+		
 		
 	</div>
 </body> 
